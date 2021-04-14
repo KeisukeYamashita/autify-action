@@ -6,7 +6,7 @@ async function run(): Promise<void> {
   try {
     const inputs: Inputs = {
       id: Number(core.getInput('id', {required: true})),
-      token: core.getInput('token', {required: true}),
+      token: core.getInput('token', {required: true})
     }
 
     // secrets will be masked by GitHub
