@@ -900,9 +900,8 @@ const api_1 = __nccwpck_require__(5614);
 class Autifyer {
     constructor(cfg) {
         const instance = axios_1.default.create();
-        instance.defaults.headers.common['Authorization'] = `Bearer ${cfg.token}`;
-        const apiConfig = new api_1.Configuration({ apiKey: cfg.token });
-        this.schedule = new api_1.ScheduleApi(apiConfig, 'https://app.autify.com/api/v1', instance);
+        const apiConfig = new api_1.Configuration({ accessToken: cfg.token });
+        this.schedule = new api_1.ScheduleApi(apiConfig);
     }
     run(id) {
         return __awaiter(this, void 0, void 0, function* () {

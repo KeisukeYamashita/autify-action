@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {ScheduleApi, Configuration} from './api'
+import {ScheduleApi, Configuration, ScheduleApiFactory} from './api'
 export interface Inputs {
   token: string
   id: number
@@ -10,14 +10,9 @@ export class Autifyer {
 
   constructor(cfg: Inputs) {
     const instance = axios.create()
-    instance.defaults.headers.common['Authorization'] = `Bearer ${cfg.token}`
 
-    const apiConfig = new Configuration({apiKey: cfg.token})
-    this.schedule = new ScheduleApi(
-      apiConfig,
-      'https://app.autify.com/api/v1',
-      instance
-    )
+    const apiConfig = new Configuration({accessToken: cfg.token})
+    this.schedule = new ScheduleApi(apiConfig)
   }
 
   async run(id: number): Promise<void> {
