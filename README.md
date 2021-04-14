@@ -23,6 +23,8 @@ jobs:
 | --- | --- | --- |
 | `id` | ID of the test plan to run | - (Required) |
 | `token` | Personal access token for Autify | - (Required) |
+| `retryIntervalSeconds` | Interval between retries | `0.1` seconds |
+| `retryTimeoutSeconds` | Timeout of this action | `3.0` seconds |
 
 ### Action outputs
 

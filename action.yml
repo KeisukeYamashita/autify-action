@@ -8,6 +8,14 @@ inputs:
   token:
     required: true
     description: 'Personal access token for Autify'
+  retryIntervalSeconds:
+    required: false
+    description: 'Interval of retries'
+    default: "0.1"
+  retryTimeoutSeconds:
+    required: false
+    description: 'Timeout for running test plan'
+    default: "3"
 runs:
   using: 'node12'
   main: 'dist/index.js'

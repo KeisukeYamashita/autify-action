@@ -994,10 +994,10 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const inputs = {
-                intervalSeconds: Number(core.getInput('intervalSeconds', { required: true })) * 1000,
+                intervalSeconds: Number(core.getInput('retryIntervalSeconds')) * 1000,
                 id: Number(core.getInput('id', { required: true })),
                 token: core.getInput('token', { required: true }),
-                timeoutSeconds: Number(core.getInput('timeoutSeconds', { required: true }))
+                timeoutSeconds: Number(core.getInput('retryTimeoutSeconds')) * 1000
             };
             // secrets will be masked by GitHub
             core.debug(`Inputs: ${util_1.inspect(inputs)}`);
