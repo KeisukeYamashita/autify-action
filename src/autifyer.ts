@@ -29,7 +29,7 @@ export class Autifyer {
       await this.retry.exec(
         async (count): Promise<void> => {
           try {
-            this.schedule.schedulesIdPost(id)
+            await this.schedule.schedulesIdPost(id)
           } catch (err) {
             core.debug(`failed retry count:${count} with error ${inspect(err)}`)
             throw err

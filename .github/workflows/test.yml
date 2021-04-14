@@ -1,12 +1,10 @@
-name: Run 
+name: Test 
 on: [pull_request]
 
 jobs:
-  build:
+  build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
-        with:
-          token: ${{ secrets.AUTIFY_TOKEN }} 
-          id: ${{ secrets.AUTIFY_TESTPLAN_ID }}
+      - run: npm install
+      - run: npm run all

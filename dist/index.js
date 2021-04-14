@@ -931,7 +931,7 @@ class Autifyer {
             try {
                 yield this.retry.exec((count) => __awaiter(this, void 0, void 0, function* () {
                     try {
-                        this.schedule.schedulesIdPost(id);
+                        yield this.schedule.schedulesIdPost(id);
                     }
                     catch (err) {
                         core.debug(`failed retry count:${count} with error ${util_1.inspect(err)}`);
