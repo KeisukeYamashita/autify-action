@@ -1,8 +1,9 @@
-name: Run 
+name: EcE 
 on: [pull_request]
 
 jobs:
-  build:
+  run:
+    name: Run
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,3 +11,4 @@ jobs:
         with:
           token: ${{ secrets.AUTIFY_TOKEN }} 
           id: ${{ secrets.AUTIFY_TESTPLAN_ID }}
+          retryTimeoutSeconds: 1
