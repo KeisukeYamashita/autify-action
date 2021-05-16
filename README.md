@@ -6,7 +6,7 @@
 
 A GitHub Action that runs [Autify](https://autify.com/) tests.
 
-**📣 This repository has been migrated to [kutify/autify-actions](https://github.com/kutify/autify-actions) 📣 **
+📣 **This repository has been migrated to [kutify/autify-actions](https://github.com/kutify/autify-actions)** 📣 
 
 ## Usage
 
